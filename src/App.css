@@ -27,3 +27,16 @@
   justify-content: center;
   align-items: center;
 }
+
+@media only screen and (max-width: 750px) {
+  .Header {
+    width: 98%;
+    flex-direction: column-reverse;
+    height: 85px;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .HeaderFilterContainer {
+    width: 100%;
+  }
+}
