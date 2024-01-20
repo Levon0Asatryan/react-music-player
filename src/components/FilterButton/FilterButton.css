@@ -1,0 +1,45 @@
+.FillterButtonContainer {
+  height: 35px;
+  width: 160px;
+  background-color: #f0f0f0;
+  border: solid 2px #999;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333333;
+  cursor: pointer;
+  margin-right: 7px;
+}
+
+.FilterButtonText {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 65%;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.UpDownIconContainer {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3px;
+}
+
+.OpenIconContainer {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3px;
+}
+
+.UpDownIcon {
+  height: 20px;
+  width: 20px;
+}
