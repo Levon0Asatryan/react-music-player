@@ -1,5 +1,6 @@
 .App {
   padding: 10px;
+  user-select: none;
 }
 
 .Header {
@@ -30,7 +31,7 @@
 
 @media only screen and (max-width: 750px) {
   .Header {
-    width: 98%;
+    width: 97%;
     flex-direction: column-reverse;
     height: 85px;
     justify-content: space-between;

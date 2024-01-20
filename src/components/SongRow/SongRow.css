@@ -1,0 +1,47 @@
+.icon {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.item {
+  color: #666;
+}
+
+.rowContainer:hover {
+  background-color: #f7f7f7;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 500px) {
+  .icon {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 19px;
+  font-weight: 500;
+  user-select: text;
+}
+
+@media only screen and (max-width: 500px) {
+  .name {
+    font-size: 15px;
+  }
+}
+
+.row {
+  height: 30px;
+  padding: 5px;
+  border-bottom: solid 1px #eaeaea;
+  border-top: solid 1px #eaeaea;
+}

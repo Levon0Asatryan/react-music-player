@@ -4,6 +4,7 @@ import PlayAllButton from "./components/PlayAllButton/PlayAllButton";
 import AddAllButton from "./components/AddAllButton/AddAllbutton";
 import FilterButton from "./components/FilterButton/FilterButton";
 import FilterInput from "./components/FilterInput/FilterInput";
+import SongList from "./components/SongList/SongList";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <FilterInput />
         </div>
       </div>
+      <SongList />
     </div>
   );
 }
