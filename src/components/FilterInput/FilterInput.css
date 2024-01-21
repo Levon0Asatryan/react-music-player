@@ -13,9 +13,9 @@
   height: 35px;
   width: 35px;
   cursor: pointer;
-  border-top: solid 2px #888;
-  border-left: solid 2px #888;
-  border-bottom: solid 2px #888;
+  border-top: solid 2px #888888;
+  border-left: solid 2px #888888;
+  border-bottom: solid 2px #888888;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
@@ -36,9 +36,9 @@
 .SearchInput {
   height: 33px;
   width: 185px;
-  border-top: solid 2px #888;
-  border-right: solid 2px #888;
-  border-bottom: solid 2px #888;
+  border-top: solid 2px #888888;
+  border-right: solid 2px #888888;
+  border-bottom: solid 2px #888888;
   border-left: none;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
