@@ -10,6 +10,13 @@
   cursor: pointer;
 }
 
+@media only screen and (max-width: 450px) {
+  .ButtonContainer {
+    height: 30px;
+    width: 120px;
+  }
+}
+
 .ButtonDiv {
   display: flex;
   align-items: center;
@@ -21,8 +28,20 @@
   font-weight: 600;
 }
 
+@media only screen and (max-width: 450px) {
+  .ButtonDiv {
+    font-size: 16px;
+  }
+}
+
 .PlayIcon {
   margin-right: 8px;
+}
+
+@media only screen and (max-width: 450px) {
+  .PlayIcon {
+    margin-right: 6px;
+  }
 }
 
 .OpenContainer {

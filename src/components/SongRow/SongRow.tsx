@@ -14,22 +14,22 @@ type Props = {
 
 const SongRow = ({ song }: Props) => {
   return (
-    <tr key={song.track} className="rowContainer">
-      <td className="row">
-        <div className="icons">
-          <PiDotsNineBold className="icon item" />
-          <IoMdPlay className="icon item" />
+    <tr key={song.track} className="RowContainer">
+      <td className="SongRow">
+        <div className="RowIcons">
+          <PiDotsNineBold className="RowIcon Item" />
+          <IoMdPlay className="RowIcon Item" />
         </div>
       </td>
-      <td className="item name row">{song.songName}</td>
-      <td className="item name row">{song.artistName}</td>
-      <td className="item name row">{song.track}</td>
-      <td className=" row">
-        <div className="icons">
-          <FaHeart className="icon item" />
-          <FaCheck className="icon item" />
-          <IoIosShareAlt className="icon item" />
-          <IoCaretDownSharp className="icon item" />
+      <td className="Item RowText SongRow">{song.songName}</td>
+      <td className="Item RowText SongRow">{song.artistName}</td>
+      <td className="Item RowText SongRow">{song.track}</td>
+      <td className=" SongRow">
+        <div className="RowIcons">
+          <FaHeart className="RowIcon Item" />
+          <FaCheck className="RowIcon Item" />
+          <IoIosShareAlt className="RowIcon Item" />
+          <IoCaretDownSharp className="RowIcon Item" />
         </div>
       </td>
     </tr>

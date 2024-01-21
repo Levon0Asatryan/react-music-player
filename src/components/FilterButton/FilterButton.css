@@ -12,6 +12,13 @@
   margin-right: 7px;
 }
 
+@media only screen and (max-width: 450px) {
+  .FillterButtonContainer {
+    height: 30px;
+    width: 140px;
+  }
+}
+
 .FilterButtonText {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -20,6 +27,13 @@
   font-size: 17px;
   font-weight: 600;
 }
+
+@media only screen and (max-width: 450px) {
+  .FilterButtonText {
+    font-size: 16px;
+  }
+}
+
 
 .UpDownIconContainer {
   height: 100%;

@@ -1,30 +1,44 @@
-.icon {
+.RowIcon {
   height: 20px;
   width: 20px;
   cursor: pointer;
 }
 
-.item {
+.Item {
   color: #666;
 }
 
-.rowContainer:hover {
+.RowContainer:hover {
   background-color: #f7f7f7;
 }
 
-.icons {
+.RowIcons {
   display: flex;
   justify-content: space-around;
 }
 
-@media only screen and (max-width: 500px) {
-  .icon {
+@media only screen and (max-width: 450px) {
+  .RowIcon {
     height: 15px;
     width: 15px;
   }
 }
 
-.name {
+@media only screen and (max-width: 700px) {
+  .RowIcon {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .RowIcon {
+    height: 17px;
+    width: 17px;
+  }
+}
+
+.RowText {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -33,13 +47,25 @@
   user-select: text;
 }
 
-@media only screen and (max-width: 500px) {
-  .name {
+@media only screen and (max-width: 450px) {
+  .RowText {
     font-size: 15px;
   }
 }
 
-.row {
+@media only screen and (max-width: 700px) {
+  .RowText {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .RowText {
+    font-size: 17px;
+  }
+}
+
+.SongRow {
   height: 30px;
   padding: 5px;
   border-bottom: solid 1px #eaeaea;

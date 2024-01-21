@@ -4,6 +4,7 @@
   text-align: left;
   user-select: none;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .TablesNames {
@@ -14,7 +15,7 @@
 
 @media only screen and (max-width: 450px) {
   .SongTable {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -28,9 +29,27 @@ th {
   border-right: solid 2px white;
 }
 
+@media only screen and (max-width: 950px) {
+  .FirstEmpty {
+    width: 7%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .FirstEmpty {
+    width: 10%;
+  }
+}
+
 .SongName {
   width: 40%;
   border-right: solid 2px white;
+}
+
+@media only screen and (max-width: 700px) {
+  .SongName {
+    width: 30%;
+  }
 }
 
 .ArtistName {
@@ -38,12 +57,42 @@ th {
   border-right: solid 2px white;
 }
 
+@media only screen and (max-width: 700px) {
+  .ArtistName {
+    width: 30%;
+  }
+}
+
 .Track {
   width: 3%;
   border-right: solid 2px white;
 }
 
+@media only screen and (max-width: 1350px) {
+  .Track {
+    width: 5%;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .Track {
+    width: 7%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .Track {
+    width: 11%;
+  }
+}
+
 .LastEmpty {
   width: 13%;
   border-right: solid 2px white;
+}
+
+@media only screen and (max-width: 700px) {
+  .LastEmpty {
+    width: 15%;
+  }
 }
