@@ -1,0 +1,33 @@
+.MusicFormContainer {
+  user-select: none;
+  margin-top: 25px;
+  width: 99%;
+  min-height: 90px; /*need to be changed*/
+  background-color: #efefef;
+  border: solid 2px #aaaaaa;
+  border-radius: 8px;
+  padding: 5px;
+  padding-top: 10px;
+}
+
+.MusicInputContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MusicInput {
+  width: 49%;
+  height: 33px;
+  border: solid 2px #888888;
+  font-size: 18px;
+  border-radius: 20px;
+  text-indent: 15px;
+}
+
+.MusicInput:focus {
+  outline: none;
+}
+
+/* .MusicInput::placeholder {
+  padding-left: 15px;
+} */
