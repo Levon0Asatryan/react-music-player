@@ -1,20 +1,39 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, MouseEvent } from "react";
 import "./MusicUploadForm.css";
+import { MdUpload } from "react-icons/md";
+import { RiDeleteBinFill } from "react-icons/ri";
 import { Song, songInitalState } from "../../utils/type";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import { removeFileExtension } from "../../utils/helperFunctions";
 
-type Props = {};
+type Props = {
+  uploadSong: Function;
+  lastTrack: number;
+};
 
-const MusicUploadForm = (props: Props) => {
+const MusicUploadForm = ({ uploadSong, lastTrack }: Props) => {
   const [selectedSong, setSelectedSong] = useState<Song>(songInitalState);
   const [uploadProgress, setUploadProgress] = useState<number | null>(null);
+  const [isWrongType, setIsWrongType] = useState(false);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const fileList = event.target.files;
 
     if (fileList && fileList.length > 0) {
       const selectedFile: File = fileList[0];
+      const allowedTypes = [".mp3", ".wav"];
 
-      simulateFileUpload(selectedFile);
+      // Check if the file has an allowed extension
+      const fileExtension = selectedFile.name.split(".").pop()?.toLowerCase();
+      if (fileExtension && allowedTypes.includes(`.${fileExtension}`)) {
+        setIsWrongType(false);
+        simulateFileUpload(selectedFile);
+        // Your file handling logic goes here
+      } else {
+        setIsWrongType(true);
+        console.log("Invalid file type");
+        // Handle invalid file type
+      }
     } else {
       console.log("No file selected");
     }
@@ -45,21 +64,31 @@ const MusicUploadForm = (props: Props) => {
         // Update the state with the selected file
         setSelectedSong((prevSong) => ({
           ...prevSong,
-          songName: file.name,
+          songName: removeFileExtension(file.name),
           artistName: "Unknown",
+          track: lastTrack + 1,
           file,
         }));
 
         // Reset the progress state
         setUploadProgress(null);
       }
-    }, 500); // Adjust the interval based on your preference
+    }, 300); // Adjust the interval based on your preference
   };
 
   const handleDeleteClick = () => {
     // Clear the selected file and reset the progress
     setSelectedSong(songInitalState);
     setUploadProgress(null);
+  };
+
+  const handleUploadClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    setTimeout(() => {
+      uploadSong(selectedSong);
+      handleDeleteClick();
+    }, 1000);
   };
 
   return (
@@ -83,28 +112,48 @@ const MusicUploadForm = (props: Props) => {
             onChange={handleInputChange}
           />
         </div>
+        {isWrongType && (
+          <ErrorMessage error="Error: Invalid file type. Please choose a valid .mp3 or .wav file." />
+        )}
 
-        {selectedSong.file ? (
-          <div>
-            <button onClick={handleDeleteClick}>Delete</button>
-          </div>
-        ) : (
-          <div>
-            <input
-              type="file"
-              accept=".mp3, .wav"
-              onChange={handleFileChange}
-            />
-
-            {uploadProgress !== null && (
-              <div>
-                <p>Uploading...</p>
-                <progress value={uploadProgress} max="100"></progress>
-              </div>
-            )}
+        {!selectedSong.file && uploadProgress !== null && (
+          <div className="SongLoadingContainer">
+            <div
+              className="SongLoading"
+              style={{ width: `${uploadProgress}%` }}
+            ></div>
           </div>
         )}
-        <div>upload button</div>
+
+        <div className="UploadButtonsContainer">
+          <button
+            onClick={(e) => {
+              handleUploadClick(e);
+            }}
+            disabled={!selectedSong.file || uploadProgress !== null}
+            className="UploadButton ButtonMargin"
+          >
+            <MdUpload className="UploadIcon" />
+            Upload
+          </button>
+          {!selectedSong.file && uploadProgress === null && (
+            <div className="MusicFileInputContainer">
+              <input
+                type="file"
+                className="MusicFileInput"
+                accept=".mp3, .wav"
+                onChange={handleFileChange}
+              />
+              <button className="UploadButton">Choose a file</button>
+            </div>
+          )}
+          {selectedSong.file && (
+            <button className="UploadButton" onClick={handleDeleteClick}>
+              <RiDeleteBinFill className="UploadIcon" />
+              Delete
+            </button>
+          )}
+        </div>
       </form>
     </div>
   );

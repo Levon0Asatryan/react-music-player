@@ -14,7 +14,7 @@ type Props = {
 
 const SongRow = ({ song }: Props) => {
   return (
-    <tr key={song.track} className="RowContainer">
+    <tr className="RowContainer">
       <td className="SongRow">
         <div className="RowIcons">
           <PiDotsNineBold className="RowIcon Item" />

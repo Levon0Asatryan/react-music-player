@@ -2,12 +2,18 @@
   user-select: none;
   margin-top: 25px;
   width: 99%;
-  min-height: 90px; /*need to be changed*/
+  min-height: 80px; /*need to be changed*/
   background-color: #efefef;
   border: solid 2px #aaaaaa;
   border-radius: 8px;
   padding: 5px;
   padding-top: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  .MusicFormContainer {
+    width: 97%;
+  }
 }
 
 .MusicInputContainer {
@@ -16,18 +22,123 @@
 }
 
 .MusicInput {
-  width: 49%;
+  width: 49.5%;
   height: 33px;
   border: solid 2px #888888;
   font-size: 18px;
   border-radius: 20px;
   text-indent: 15px;
+  margin-bottom: 10px;
 }
 
 .MusicInput:focus {
   outline: none;
 }
 
-/* .MusicInput::placeholder {
-  padding-left: 15px;
-} */
+.MusicFileInputContainer {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  height: 35px;
+  width: 140px;
+}
+
+.MusicFileInput {
+  height: 35px;
+  width: 140px;
+  cursor: default;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.MusicFileInputContainer:hover .UploadButton {
+  background-color: #d9d9d9;
+}
+
+.UploadButton {
+  height: 35px;
+  width: 140px;
+  background-color: #f0f0f0;
+  border: solid 2px #999999;
+  border-radius: 6px;
+  color: #333333;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ButtonMargin {
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 450px) {
+  .MusicFileInputContainer {
+    height: 30px;
+    width: 120px;
+  }
+  .MusicFileInput {
+    height: 30px;
+    width: 120px;
+  }
+  .UploadButton {
+    height: 30px;
+    width: 120px;
+    font-size: 16px;
+  }
+  .ButtonMargin {
+    margin-right: 7px;
+  }
+}
+
+.UploadButton:hover {
+  background-color: #d9d9d9;
+}
+
+.UploadButton:disabled {
+  background-color: #fafafa;
+  border: solid 2px #cccccc;
+  color: #cccccc;
+  cursor: auto;
+}
+
+.UploadButtonsContainer {
+  width: 100%;
+  display: flex;
+}
+
+.SongLoadingContainer {
+  border: solid 2px #999999;
+  border-radius: 12px;
+  height: 24px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.SongLoading {
+  background-color: #333333;
+  border-radius: 10px;
+  height: 100%;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  .SongLoadingContainer {
+    height: 12px;
+    border-radius: 6px;
+  }
+  .SongLoading {
+    border-radius: 4px;
+  }
+}
+
+.UploadIcon {
+  height: 19px;
+  width: 19px;
+  margin-right: 7px;
+}
